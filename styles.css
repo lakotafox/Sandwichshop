@@ -654,6 +654,66 @@ h1, h2, h3, h4 {
     font-size: 16px;
 }
 
+/* Extras Section */
+.extras-section {
+    margin-top: 60px;
+    padding: 40px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.extras-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: var(--accent);
+}
+
+.extras-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.extra-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: var(--transition);
+}
+
+.extra-item:hover {
+    border-color: rgba(244, 162, 97, 0.3);
+    background: rgba(255,255,255,0.05);
+}
+
+.extra-item span:first-child {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.extra-price {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .extras-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .extras-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -700,6 +760,47 @@ h1, h2, h3, h4 {
 .menu-placeholder.dessert-gradient { background: linear-gradient(135deg, #FF69B4 0%, #FF1493 50%, #C71585 100%); }
 .menu-placeholder.drinks-gradient { background: linear-gradient(135deg, #00CED1 0%, #20B2AA 50%, #008B8B 100%); }
 
+/* Sub Sandwich Gradients */
+.menu-placeholder.steak-gradient { background: linear-gradient(135deg, #5D4037 0%, #8D6E63 50%, #A1887F 100%); }
+.menu-placeholder.cajun-gradient { background: linear-gradient(135deg, #E65100 0%, #FF6D00 50%, #FF9100 100%); }
+.menu-placeholder.chicken-gradient { background: linear-gradient(135deg, #F9A825 0%, #FDD835 50%, #FFEE58 100%); }
+.menu-placeholder.reuben-gradient { background: linear-gradient(135deg, #6D4C41 0%, #8D6E63 50%, #795548 100%); }
+.menu-placeholder.war-gradient { background: linear-gradient(135deg, #D84315 0%, #FF5722 50%, #FF8A65 100%); }
+.menu-placeholder.french-gradient { background: linear-gradient(135deg, #4E342E 0%, #6D4C41 50%, #8D6E63 100%); }
+.menu-placeholder.meatball-gradient { background: linear-gradient(135deg, #B71C1C 0%, #D32F2F 50%, #E53935 100%); }
+.menu-placeholder.blt-gradient { background: linear-gradient(135deg, #C62828 0%, #E57373 50%, #FFCDD2 100%); }
+.menu-placeholder.philly-gradient { background: linear-gradient(135deg, #3E2723 0%, #5D4037 50%, #8D6E63 100%); }
+
+/* Burger Gradients */
+.menu-placeholder.bacon-burger-gradient { background: linear-gradient(135deg, #BF360C 0%, #E64A19 50%, #FF7043 100%); }
+.menu-placeholder.bbq-burger-gradient { background: linear-gradient(135deg, #4A148C 0%, #7B1FA2 50%, #AB47BC 100%); }
+.menu-placeholder.mushroom-burger-gradient { background: linear-gradient(135deg, #33691E 0%, #558B2F 50%, #7CB342 100%); }
+
+/* Breakfast Gradients */
+.menu-placeholder.muffin-gradient { background: linear-gradient(135deg, #FF6F00 0%, #FF8F00 50%, #FFB300 100%); }
+.menu-placeholder.burrito-gradient { background: linear-gradient(135deg, #EF6C00 0%, #F57C00 50%, #FB8C00 100%); }
+.menu-placeholder.pancakes-gradient { background: linear-gradient(135deg, #FFAB00 0%, #FFC107 50%, #FFD54F 100%); }
+
+/* Sides Gradients */
+.menu-placeholder.tots-gradient { background: linear-gradient(135deg, #F57F17 0%, #F9A825 50%, #FBC02D 100%); }
+.menu-placeholder.caesar-gradient { background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 50%, #43A047 100%); }
+.menu-placeholder.kale-gradient { background: linear-gradient(135deg, #004D40 0%, #00695C 50%, #00897B 100%); }
+.menu-placeholder.rings-gradient { background: linear-gradient(135deg, #FF6F00 0%, #FF8F00 50%, #FFA000 100%); }
+
+/* Dessert Gradients */
+.menu-placeholder.pie-gradient { background: linear-gradient(135deg, #E65100 0%, #EF6C00 50%, #F57C00 100%); }
+.menu-placeholder.float-gradient { background: linear-gradient(135deg, #4A148C 0%, #6A1B9A 50%, #8E24AA 100%); }
+.menu-placeholder.cookie-gradient { background: linear-gradient(135deg, #795548 0%, #8D6E63 50%, #A1887F 100%); }
+
+/* Drinks Gradients */
+.menu-placeholder.shake-gradient { background: linear-gradient(135deg, #E91E63 0%, #F06292 50%, #F8BBD9 100%); }
+.menu-placeholder.booze-gradient { background: linear-gradient(135deg, #FF8F00 0%, #FFB300 50%, #FFD54F 100%); }
+.menu-placeholder.wine-gradient { background: linear-gradient(135deg, #880E4F 0%, #AD1457 50%, #C2185B 100%); }
+
+/* Kids Gradients */
+.menu-placeholder.kids-gradient { background: linear-gradient(135deg, #FFC107 0%, #FFCA28 50%, #FFD54F 100%); }
+.menu-placeholder.kids2-gradient { background: linear-gradient(135deg, #7B1FA2 0%, #9C27B0 50%, #BA68C8 100%); }
+
 .menu-img {
     width: 100%;
     height: 100%;
@@ -745,10 +846,28 @@ h1, h2, h3, h4 {
 }
 
 .menu-card-content {
-    padding: 28px;
+    padding: 24px;
 }
 
-.menu-card-content h3 {
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.menu-header h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.menu-header .price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.menu-card-content > h3 {
     font-size: 20px;
     margin-bottom: 10px;
 }
@@ -757,7 +876,7 @@ h1, h2, h3, h4 {
     color: var(--text-muted);
     font-size: 14px;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin: 0;
 }
 
 .menu-footer {
@@ -1238,7 +1357,16 @@ h1, h2, h3, h4 {
    ======================================== */
 .footer {
     background: #050505;
-    padding: 80px 0 30px;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .footer-grid {
@@ -1246,6 +1374,42 @@ h1, h2, h3, h4 {
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
     gap: 60px;
     margin-bottom: 60px;
+}
+
+.footer-info {
+    text-align: right;
+}
+
+.footer-info p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-info a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 8px;
+    transition: var(--transition);
+}
+
+.footer-info a:hover {
+    color: var(--accent-light);
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-info {
+        text-align: center;
+    }
 }
 
 .footer-logo {

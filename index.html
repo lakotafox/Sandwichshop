@@ -36,7 +36,7 @@
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#menu" class="nav-link">Menu</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#contact" class="nav-link">Order</a></li>
             </ul>
             <a href="#contact" class="order-btn">Order Now</a>
             <button class="mobile-toggle" id="mobileToggle">
@@ -53,7 +53,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact">Order</a></li>
         </ul>
         <a href="#contact" class="order-btn mobile-order">Order Now</a>
     </div>
@@ -94,8 +94,8 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Our Menu</span>
-                <h2 class="section-title">Vegan Favorites</h2>
-                <p class="section-desc">From subs to burgers to breakfast - all 100% plant-based</p>
+                <h2 class="section-title">100% Vegan, 100% Delicious</h2>
+                <p class="section-desc">Everything is plant-based. No exceptions!</p>
             </div>
             <div class="menu-categories">
                 <button class="category-btn active" data-category="all">All</button>
@@ -103,90 +103,490 @@
                 <button class="category-btn" data-category="burgers">Burgers</button>
                 <button class="category-btn" data-category="breakfast">Breakfast</button>
                 <button class="category-btn" data-category="sides">Sides</button>
+                <button class="category-btn" data-category="desserts">Desserts</button>
+                <button class="category-btn" data-category="drinks">Drinks</button>
+                <button class="category-btn" data-category="kids">Kids</button>
             </div>
+
             <div class="menu-grid">
+                <!-- SUBMARINE SANDWICHES -->
                 <div class="menu-card" data-category="subs">
                     <div class="menu-card-image">
-                        <img src="images/sub.jpg" alt="Submarine Sandwich" class="menu-img">
+                        <img src="images/sub.jpg" alt="Italian Sub" class="menu-img">
                         <span class="menu-badge">Popular</span>
                     </div>
                     <div class="menu-card-content">
-                        <h3>Submarine Sandwiches</h3>
-                        <p>Classic sub sandwiches loaded with fresh veggies and house-made vegan meats</p>
-                        <div class="menu-footer">
-                            <span class="tag-vegan">100% Vegan</span>
-                            <a href="#contact" class="add-btn">Order</a>
+                        <div class="menu-header">
+                            <h3>Italian Sub</h3>
+                            <span class="price">$19.50</span>
                         </div>
+                        <p>House ham, vegan cheese, lettuce, tomato, onion, banana peppers, deli mustard, vegenaise, oil & vinegar on white sub roll</p>
                     </div>
                 </div>
-                <div class="menu-card" data-category="burgers">
+
+                <div class="menu-card" data-category="subs">
                     <div class="menu-card-image">
-                        <div class="menu-placeholder burger-gradient"></div>
+                        <div class="menu-placeholder steak-gradient"></div>
+                        <span class="menu-badge">Best Seller</span>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Steak & Cheese</h3>
+                            <span class="price">$20.00</span>
+                        </div>
+                        <p>Seitan steak, grilled onions & peppers, vegan cheese, special sauce, vegenaise on white sub roll</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="subs">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder cajun-gradient"></div>
                         <span class="menu-badge new">Fan Fave</span>
                     </div>
                     <div class="menu-card-content">
-                        <h3>Vegan Burgers</h3>
-                        <p>Juicy plant-based patties with all the fixings on a fresh bun</p>
-                        <div class="menu-footer">
-                            <span class="tag-vegan">100% Vegan</span>
-                            <a href="#contact" class="add-btn">Order</a>
+                        <div class="menu-header">
+                            <h3>Cajun Chicken Po'Boy</h3>
+                            <span class="price">$17.00</span>
                         </div>
+                        <p>Crispy cajun-spiced vegan chicken, lettuce, tomato, pickles, remoulade sauce on French bread</p>
                     </div>
                 </div>
+
+                <div class="menu-card" data-category="subs">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder chicken-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Chicken Salad Sub</h3>
+                            <span class="price">$19.50</span>
+                        </div>
+                        <p>House-made vegan chicken salad, lettuce, tomato on your choice of bread</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="subs">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder reuben-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Reuben</h3>
+                            <span class="price">$15.75</span>
+                        </div>
+                        <p>House corned beef, sauerkraut, thousand island, vegan swiss on grilled rye</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="subs">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder war-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>War Eagle</h3>
+                            <span class="price">$16.50</span>
+                        </div>
+                        <p>Breaded vegan chicken, buffalo sauce, ranch, lettuce, tomato on sub roll</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="subs">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder french-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>French Dip</h3>
+                            <span class="price">$18.00</span>
+                        </div>
+                        <p>Thinly sliced seitan, grilled onions, vegan provolone, au jus on the side</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="subs">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder meatball-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Meatball Sub</h3>
+                            <span class="price">$17.50</span>
+                        </div>
+                        <p>House-made vegan meatballs, marinara, melted vegan mozzarella on sub roll</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="subs">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder blt-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>BLT</h3>
+                            <span class="price">$14.00</span>
+                        </div>
+                        <p>Crispy tempeh bacon, lettuce, tomato, vegenaise on toasted sourdough</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="subs">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder philly-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Philly Cheesesteak</h3>
+                            <span class="price">$19.00</span>
+                        </div>
+                        <p>Seasoned seitan, grilled peppers & onions, melted vegan cheese, hoagie roll</p>
+                    </div>
+                </div>
+
+                <!-- BURGERS -->
+                <div class="menu-card" data-category="burgers">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder burger-gradient"></div>
+                        <span class="menu-badge">Popular</span>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Classic Burger</h3>
+                            <span class="price">$15.00</span>
+                        </div>
+                        <p>House patty, lettuce, tomato, onion, pickles, special sauce on brioche bun</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="burgers">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder bacon-burger-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Bacon Cheeseburger</h3>
+                            <span class="price">$17.50</span>
+                        </div>
+                        <p>House patty, tempeh bacon, vegan cheese, lettuce, tomato, special sauce</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="burgers">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder bbq-burger-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>BBQ Burger</h3>
+                            <span class="price">$16.50</span>
+                        </div>
+                        <p>House patty, BBQ sauce, crispy onion rings, pickles, vegan cheese</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="burgers">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder mushroom-burger-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Mushroom Swiss</h3>
+                            <span class="price">$17.00</span>
+                        </div>
+                        <p>House patty, sautéed mushrooms, vegan swiss, garlic aioli on brioche</p>
+                    </div>
+                </div>
+
+                <!-- BREAKFAST -->
                 <div class="menu-card" data-category="breakfast">
                     <div class="menu-card-image">
                         <div class="menu-placeholder breakfast-gradient"></div>
+                        <span class="menu-badge">Popular</span>
                     </div>
                     <div class="menu-card-content">
-                        <h3>Breakfast</h3>
-                        <p>Start your day right with our hearty vegan breakfast options</p>
-                        <div class="menu-footer">
-                            <span class="tag-vegan">100% Vegan</span>
-                            <a href="#contact" class="add-btn">Order</a>
+                        <div class="menu-header">
+                            <h3>Breakfast Melt</h3>
+                            <span class="price">$12.10</span>
                         </div>
+                        <p>Organic seasoned tofu, seitan, tempeh bacon or sausage, cheese, spinach, tomato, roasted red pepper aioli</p>
                     </div>
                 </div>
+
+                <div class="menu-card" data-category="breakfast">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder muffin-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Breakfast Muffin</h3>
+                            <span class="price">$9.50</span>
+                        </div>
+                        <p>Organic seasoned tofu, vegan cheese, tomato, spinach, roasted red pepper aioli on english muffin</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="breakfast">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder burrito-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Breakfast Burrito</h3>
+                            <span class="price">$13.00</span>
+                        </div>
+                        <p>Scrambled tofu, tempeh bacon, potatoes, vegan cheese, peppers, onions, salsa</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="breakfast">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder pancakes-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Pancake Stack</h3>
+                            <span class="price">$11.00</span>
+                        </div>
+                        <p>Three fluffy vegan pancakes with maple syrup and vegan butter</p>
+                    </div>
+                </div>
+
+                <!-- SIDES -->
                 <div class="menu-card" data-category="sides">
                     <div class="menu-card-image">
                         <div class="menu-placeholder sides-gradient"></div>
+                        <span class="menu-badge">Wed & Fri</span>
                     </div>
                     <div class="menu-card-content">
-                        <h3>Sides & Fries</h3>
-                        <p>Crispy fries, tots, and delicious sides to complete your meal</p>
-                        <div class="menu-footer">
-                            <span class="tag-vegan">100% Vegan</span>
-                            <a href="#contact" class="add-btn">Order</a>
+                        <div class="menu-header">
+                            <h3>French Fries</h3>
+                            <span class="price">$5.00</span>
                         </div>
+                        <p>Crispy golden fries (available Wednesdays & Fridays only!)</p>
                     </div>
                 </div>
+
                 <div class="menu-card" data-category="sides">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder tots-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Tater Tots</h3>
+                            <span class="price">$5.50</span>
+                        </div>
+                        <p>Crispy tots served with your choice of dipping sauce</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="sides">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder caesar-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Caesar Salad</h3>
+                            <span class="price">$10.00</span>
+                        </div>
+                        <p>Romaine, vegan caesar dressing, croutons, vegan parmesan</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="sides">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder kale-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Kale Salad</h3>
+                            <span class="price">$11.00</span>
+                        </div>
+                        <p>Massaged kale, dried cranberries, walnuts, lemon tahini dressing</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="sides">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder rings-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Onion Rings</h3>
+                            <span class="price">$6.00</span>
+                        </div>
+                        <p>Beer-battered onion rings with chipotle aioli</p>
+                    </div>
+                </div>
+
+                <!-- DESSERTS -->
+                <div class="menu-card" data-category="desserts">
                     <div class="menu-card-image">
                         <div class="menu-placeholder dessert-gradient"></div>
+                        <span class="menu-badge">House Made</span>
                     </div>
                     <div class="menu-card-content">
-                        <h3>Desserts</h3>
-                        <p>Sweet treats to satisfy your cravings - all dairy-free!</p>
-                        <div class="menu-footer">
-                            <span class="tag-vegan">100% Vegan</span>
-                            <a href="#contact" class="add-btn">Order</a>
+                        <div class="menu-header">
+                            <h3>Brownie</h3>
+                            <span class="price">$4.50</span>
                         </div>
+                        <p>House-made chocolaty, fudgey brownie</p>
                     </div>
                 </div>
-                <div class="menu-card" data-category="sides">
+
+                <div class="menu-card" data-category="desserts">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder pie-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Mini Pumpkin Pie</h3>
+                            <span class="price">$5.00</span>
+                        </div>
+                        <p>Seasonal mini pumpkin pie with coconut whip</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="desserts">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder float-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Root Beer Float</h3>
+                            <span class="price">$6.50</span>
+                        </div>
+                        <p>Coconut Bliss vanilla ice cream with Jones' Root Beer</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="desserts">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder cookie-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Chocolate Chip Cookie</h3>
+                            <span class="price">$3.50</span>
+                        </div>
+                        <p>Warm, gooey house-made chocolate chip cookie</p>
+                    </div>
+                </div>
+
+                <!-- DRINKS -->
+                <div class="menu-card" data-category="drinks">
                     <div class="menu-card-image">
                         <div class="menu-placeholder drinks-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Fountain Drinks</h3>
+                            <span class="price">$3.00</span>
+                        </div>
+                        <p>Coke, Diet Coke, Sprite, Lemonade, Iced Tea</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="drinks">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder shake-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Vegan Milkshake</h3>
+                            <span class="price">$7.50</span>
+                        </div>
+                        <p>Chocolate, vanilla, or strawberry made with coconut ice cream</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="drinks">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder booze-gradient"></div>
                         <span class="menu-badge booze">21+</span>
                     </div>
                     <div class="menu-card-content">
-                        <h3>Drinks & Booze</h3>
-                        <p>Refreshing beverages and adult drinks. Valid ID required!</p>
-                        <div class="menu-footer">
-                            <span class="tag-vegan">100% Vegan</span>
-                            <a href="#contact" class="add-btn">Order</a>
+                        <div class="menu-header">
+                            <h3>Craft Beer</h3>
+                            <span class="price">$6.00</span>
                         </div>
+                        <p>Rotating selection of local craft beers. Valid ID required!</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="drinks">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder wine-gradient"></div>
+                        <span class="menu-badge booze">21+</span>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Wine</h3>
+                            <span class="price">$8.00</span>
+                        </div>
+                        <p>Red or white, by the glass. Valid ID required!</p>
+                    </div>
+                </div>
+
+                <!-- KIDS -->
+                <div class="menu-card" data-category="kids">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder kids-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Kid's Grilled Cheese</h3>
+                            <span class="price">$7.00</span>
+                        </div>
+                        <p>Vegan cheese on grilled white bread, served with tots</p>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="kids">
+                    <div class="menu-card-image">
+                        <div class="menu-placeholder kids2-gradient"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-header">
+                            <h3>Kid's PB&J</h3>
+                            <span class="price">$6.00</span>
+                        </div>
+                        <p>Classic peanut butter & jelly on white bread, served with tots</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- EXTRAS -->
+            <div class="extras-section">
+                <h3 class="extras-title">Extras & Add-Ons</h3>
+                <div class="extras-grid">
+                    <div class="extra-item">
+                        <span>Tempeh Bacon</span>
+                        <span class="extra-price">+$1.65</span>
+                    </div>
+                    <div class="extra-item">
+                        <span>Avocado</span>
+                        <span class="extra-price">+$1.65</span>
+                    </div>
+                    <div class="extra-item">
+                        <span>Vegan Cheese</span>
+                        <span class="extra-price">+$1.65</span>
+                    </div>
+                    <div class="extra-item">
+                        <span>Extra Patty</span>
+                        <span class="extra-price">+$4.00</span>
+                    </div>
+                    <div class="extra-item">
+                        <span>Gluten-Free Bread</span>
+                        <span class="extra-price">+$2.00</span>
+                    </div>
+                    <div class="extra-item">
+                        <span>Side of Sauce</span>
+                        <span class="extra-price">+$0.75</span>
                     </div>
                 </div>
             </div>
+
             <div class="menu-cta">
                 <a href="#contact" class="btn btn-primary btn-large">Place Your Order</a>
             </div>
@@ -200,25 +600,11 @@
                 <div class="about-content">
                     <span class="section-tag">Our Story</span>
                     <h2 class="section-title">Portland's Favorite Vegan Spot</h2>
-                    <p>DC Vegetarian has been serving Portland's SE Division Street with incredible 100% vegan comfort food. Our mission is simple: prove that plant-based food can be just as satisfying and delicious as anything else.</p>
-                    <p>From our famous submarine sandwiches to our mouthwatering burgers, every item is crafted with care using the freshest ingredients. No meat, no cheese, no eggs, no dairy - just pure deliciousness!</p>
+                    <p>What started as a beloved food cart in downtown Portland has grown into SE Division's go-to destination for incredible vegan comfort food.</p>
+                    <p>Our mission is simple: prove that plant-based food can be just as satisfying and delicious as anything else. From our famous Steak & Cheese to our crispy Cajun Po'Boy, every item is crafted with care.</p>
                     <div class="vegan-promise">
                         <div class="promise-icon">🌱</div>
                         <p><strong>Our Promise:</strong> Despite the words on the menu, we do not serve meat, cheese, eggs, or dairy. Everything is 100% vegan!</p>
-                    </div>
-                    <div class="stats">
-                        <div class="stat">
-                            <span class="stat-number" data-target="100">0</span>
-                            <span class="stat-label">% Vegan</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number" data-target="50">0</span>
-                            <span class="stat-label">+ Menu Items</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number" data-target="5">0</span>
-                            <span class="stat-label">Star Reviews</span>
-                        </div>
                     </div>
                 </div>
                 <div class="about-image">
@@ -227,56 +613,6 @@
                         <div class="image-accent"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Reviews</span>
-                <h2 class="section-title">What Our Customers Say</h2>
-            </div>
-            <div class="testimonial-slider">
-                <div class="testimonial-card active">
-                    <div class="stars">★★★★★</div>
-                    <p>"Best vegan food in Portland! The subs are incredible - you'd never know it's all plant-based!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">S</div>
-                        <div>
-                            <strong>Sarah M.</strong>
-                            <span>Regular Customer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Finally, comfort food I can eat! The burgers are amazing and the staff is always friendly."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">J</div>
-                        <div>
-                            <strong>James K.</strong>
-                            <span>Vegan Since 2019</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"My non-vegan friends are obsessed with this place. That says everything!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">L</div>
-                        <div>
-                            <strong>Lisa T.</strong>
-                            <span>Portland Local</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
             </div>
         </div>
     </section>
@@ -322,19 +658,7 @@
                             </div>
                             <div>
                                 <strong>Hours</strong>
-                                <p>Monday: Closed<br>Tue-Sun: 11AM - 9:30PM</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <strong>Email</strong>
-                                <p><a href="mailto:dcvegetarian@gmail.com">dcvegetarian@gmail.com</a></p>
+                                <p>Mon: Closed<br>Tue-Sat: 11AM - 8PM<br>Sun: 11AM - 3PM</p>
                             </div>
                         </div>
                     </div>
@@ -342,7 +666,7 @@
                 <div class="contact-form-wrapper">
                     <form class="contact-form" id="orderForm">
                         <h3 class="form-title">Place Your Order</h3>
-                        <p class="form-subtitle">Fill out the form below and we'll have your food ready!</p>
+                        <p class="form-subtitle">Fill out the form and we'll have your food ready!</p>
                         <div class="form-group">
                             <input type="text" id="name" placeholder="Your Name" required>
                             <label for="name">Your Name</label>
@@ -357,7 +681,6 @@
                                     <option value="">Order Type</option>
                                     <option value="pickup">Pickup</option>
                                     <option value="dinein">Dine-in</option>
-                                    <option value="delivery">Delivery</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -366,7 +689,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <textarea id="order" placeholder="Your Order (e.g., 2 Vegan Burgers, 1 Sub, Fries)" rows="4" required></textarea>
+                            <textarea id="order" placeholder="Your Order (e.g., 1 Steak & Cheese, 1 Italian Sub, Tots)" rows="4" required></textarea>
                             <label for="order">Your Order</label>
                         </div>
                         <div class="form-group">
@@ -389,55 +712,18 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-content">
                 <div class="footer-brand">
                     <div class="footer-logo">
                         <img src="images/logo.jpg" alt="DC Vegetarian" class="footer-logo-img">
                         <span class="logo-text">DC<span class="accent">Vegetarian</span></span>
                     </div>
-                    <p>100% vegan comfort food in Portland, OR. No meat, no cheese, no eggs, no dairy - just delicious food!</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-                        </a>
-                    </div>
+                    <p>100% vegan comfort food in Portland, OR.<br>No meat, no cheese, no eggs, no dairy - just delicious food!</p>
                 </div>
-                <div class="footer-links">
-                    <h4>Menu</h4>
-                    <ul>
-                        <li><a href="#menu">Submarine Sandwiches</a></li>
-                        <li><a href="#menu">Burgers</a></li>
-                        <li><a href="#menu">Breakfast</a></li>
-                        <li><a href="#menu">Sides & Drinks</a></li>
-                        <li><a href="#menu">Gluten-Free</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Info</h4>
-                    <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#contact">Gift Cards</a></li>
-                        <li><a href="#contact">Merch</a></li>
-                        <li><a href="#contact">Group Orders</a></li>
-                    </ul>
-                </div>
-                <div class="footer-newsletter">
-                    <h4>Visit Us</h4>
-                    <p class="footer-address">
-                        5026 SE Division Street<br>
-                        Portland, OR 97206<br><br>
-                        <strong>Hours:</strong><br>
-                        Mon: Closed<br>
-                        Tue-Sun: 11AM - 9:30PM
-                    </p>
-                    <a href="tel:+15033743388" class="footer-phone">(503) 374-3388</a>
+                <div class="footer-info">
+                    <p>5026 SE Division Street, Portland, OR 97206</p>
+                    <a href="tel:+15033743388">(503) 374-3388</a>
+                    <p>Tue-Sat: 11AM-8PM | Sun: 11AM-3PM</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -451,7 +737,7 @@
         <div class="modal-content">
             <div class="modal-icon">✓</div>
             <h3>Order Received!</h3>
-            <p>Thank you for your order. We'll call you to confirm and let you know when it's ready!</p>
+            <p>Thank you! We'll call you to confirm and let you know when it's ready.</p>
             <button class="btn btn-primary" onclick="closeModal()">Got it!</button>
         </div>
     </div>
