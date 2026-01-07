@@ -1,17 +1,17 @@
 /* ========================================
-   DC Veg Ordering - Anime.js Animations
+   DC Vegetarian - Anime.js Animations
    ======================================== */
 
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', () => {
     initLoader();
     initNavigation();
-    initHeroAnimations();
     initScrollAnimations();
     initTestimonialSlider();
-    initFormHandling();
     initMobileMenu();
     initCounterAnimation();
+    initMenuCategories();
+    initButtonEffects();
 });
 
 /* ========================================
@@ -19,15 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
    ======================================== */
 function initLoader() {
     const loader = document.getElementById('loader');
+    const loaderLogo = document.querySelector('.loader-logo');
+    const loaderText = document.querySelector('.loader-text');
 
-    // Animate sandwich icon building
+    // Animate logo and text
     const loaderTimeline = anime.timeline({
         easing: 'easeOutExpo',
         complete: () => {
             anime({
                 targets: loader,
                 opacity: 0,
-                duration: 500,
+                duration: 600,
                 easing: 'easeInOutQuad',
                 complete: () => {
                     loader.style.display = 'none';
@@ -39,46 +41,23 @@ function initLoader() {
 
     loaderTimeline
         .add({
-            targets: '.bread-bottom',
+            targets: loaderLogo,
             opacity: [0, 1],
-            translateY: [30, 0],
-            duration: 400
+            scale: [0.5, 1],
+            duration: 800
         })
         .add({
-            targets: '.cheese',
+            targets: loaderText,
             opacity: [0, 1],
             translateY: [20, 0],
-            duration: 300
-        }, '-=100')
-        .add({
-            targets: '.tomato',
-            opacity: [0, 1],
-            translateY: [20, 0],
-            duration: 300
-        }, '-=100')
-        .add({
-            targets: '.lettuce',
-            opacity: [0, 1],
-            translateY: [20, 0],
-            duration: 300
-        }, '-=100')
-        .add({
-            targets: '.bread-top',
-            opacity: [0, 1],
-            translateY: [-30, 0],
-            duration: 400
-        }, '-=100')
-        .add({
-            targets: '.loader-text',
-            opacity: [0, 1],
-            translateY: [10, 0],
-            duration: 400
-        }, '-=200')
+            duration: 500
+        }, '-=400')
         .add({
             targets: '.loader-content',
             scale: [1, 0.95],
-            duration: 200
-        }, '+=500');
+            opacity: [1, 0.8],
+            duration: 300
+        }, '+=800');
 }
 
 /* ========================================
@@ -99,8 +78,11 @@ function initNavigation() {
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',
@@ -117,13 +99,22 @@ function initNavigation() {
    Hero Animations
    ======================================== */
 function initHeroAnimations() {
+    // Animate hero badge
+    anime({
+        targets: '.hero-badge',
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 600,
+        easing: 'easeOutExpo'
+    });
+
     // Animate title lines
     anime({
         targets: '.title-line',
         opacity: [0, 1],
         translateY: [40, 0],
         duration: 1000,
-        delay: anime.stagger(200),
+        delay: anime.stagger(200, {start: 200}),
         easing: 'easeOutExpo'
     });
 
@@ -133,7 +124,7 @@ function initHeroAnimations() {
         opacity: [0, 1],
         translateY: [20, 0],
         duration: 800,
-        delay: 800,
+        delay: 900,
         easing: 'easeOutExpo'
     });
 
@@ -143,28 +134,29 @@ function initHeroAnimations() {
         opacity: [0, 1],
         translateY: [20, 0],
         duration: 800,
-        delay: 1000,
+        delay: 1100,
         easing: 'easeOutExpo'
     });
 
-    // Animate sandwich ingredients
+    // Animate hero image
     anime({
-        targets: '.ingredient',
+        targets: '.hero-img-wrapper',
         opacity: [0, 1],
-        translateY: (el, i) => [-100 + (i * 20), 0],
-        delay: anime.stagger(100, {start: 1200}),
-        duration: 800,
-        easing: 'easeOutBounce'
+        scale: [0.8, 1],
+        duration: 1200,
+        delay: 600,
+        easing: 'easeOutExpo'
     });
 
-    // Floating animation for sandwich
+    // Floating animation for hero image
     anime({
-        targets: '.sandwich-display',
-        translateY: [-10, 10],
-        duration: 3000,
+        targets: '.hero-img-wrapper',
+        translateY: [-15, 15],
+        duration: 4000,
         direction: 'alternate',
         loop: true,
-        easing: 'easeInOutSine'
+        easing: 'easeInOutSine',
+        delay: 1800
     });
 
     // Animate scroll indicator
@@ -308,13 +300,24 @@ function initScrollAnimations() {
                     });
                 }
 
+                // Order online card
+                if (element.classList.contains('order-online-card')) {
+                    anime({
+                        targets: element,
+                        opacity: [0, 1],
+                        scale: [0.95, 1],
+                        duration: 800,
+                        easing: 'easeOutExpo'
+                    });
+                }
+
                 observer.unobserve(element);
             }
         });
     }, observerOptions);
 
     // Observe elements
-    document.querySelectorAll('.feature-card, .menu-card, .section-header, .about-content, .about-image, .contact-info, .contact-form-wrapper').forEach(el => {
+    document.querySelectorAll('.feature-card, .menu-card, .section-header, .about-content, .about-image, .contact-info, .contact-form-wrapper, .order-online-card').forEach(el => {
         el.style.opacity = '0';
         observer.observe(el);
     });
@@ -340,7 +343,6 @@ function initCounterAnimation() {
 
                 counters.forEach(counter => {
                     const target = parseInt(counter.dataset.target);
-                    const suffix = target >= 1000 ? '+' : '';
 
                     anime({
                         targets: counter,
@@ -350,11 +352,7 @@ function initCounterAnimation() {
                         easing: 'easeOutExpo',
                         update: function(anim) {
                             const val = Math.round(anim.animations[0].currentValue);
-                            if (val >= 1000) {
-                                counter.innerHTML = (val / 1000).toFixed(0) + 'K+';
-                            } else {
-                                counter.innerHTML = val + suffix;
-                            }
+                            counter.innerHTML = val;
                         }
                     });
                 });
@@ -371,11 +369,69 @@ function initCounterAnimation() {
 }
 
 /* ========================================
+   Menu Categories Filter
+   ======================================== */
+function initMenuCategories() {
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const menuCards = document.querySelectorAll('.menu-card');
+
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active button
+            categoryBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const category = btn.dataset.category;
+
+            // Animate button
+            anime({
+                targets: btn,
+                scale: [1, 0.95, 1],
+                duration: 300,
+                easing: 'easeInOutQuad'
+            });
+
+            // Filter cards
+            menuCards.forEach((card, index) => {
+                const cardCategory = card.dataset.category;
+                const shouldShow = category === 'all' || cardCategory === category;
+
+                if (shouldShow) {
+                    card.style.display = 'block';
+                    anime({
+                        targets: card,
+                        opacity: [0, 1],
+                        translateY: [20, 0],
+                        duration: 500,
+                        delay: index * 50,
+                        easing: 'easeOutExpo'
+                    });
+                } else {
+                    anime({
+                        targets: card,
+                        opacity: 0,
+                        translateY: -20,
+                        duration: 300,
+                        easing: 'easeInExpo',
+                        complete: () => {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+    });
+}
+
+/* ========================================
    Testimonial Slider
    ======================================== */
 function initTestimonialSlider() {
     const cards = document.querySelectorAll('.testimonial-card');
     const dots = document.querySelectorAll('.dot');
+
+    if (cards.length === 0) return;
+
     let currentIndex = 0;
     let autoSlide;
 
@@ -430,62 +486,9 @@ function initTestimonialSlider() {
 }
 
 /* ========================================
-   Form Handling
+   Button Effects
    ======================================== */
-function initFormHandling() {
-    const form = document.getElementById('orderForm');
-    const modal = document.getElementById('successModal');
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        // Button animation
-        const btn = form.querySelector('button[type="submit"]');
-        anime({
-            targets: btn,
-            scale: [1, 0.95, 1],
-            duration: 300,
-            easing: 'easeInOutQuad'
-        });
-
-        // Show success modal
-        setTimeout(() => {
-            modal.classList.add('active');
-            anime({
-                targets: '.modal-content',
-                scale: [0.8, 1],
-                opacity: [0, 1],
-                duration: 400,
-                easing: 'easeOutBack'
-            });
-
-            // Reset form
-            form.reset();
-        }, 300);
-    });
-
-    // Input focus animations
-    const inputs = form.querySelectorAll('input, textarea');
-    inputs.forEach(input => {
-        input.addEventListener('focus', () => {
-            anime({
-                targets: input.parentElement,
-                scale: [1, 1.02],
-                duration: 200,
-                easing: 'easeOutQuad'
-            });
-        });
-
-        input.addEventListener('blur', () => {
-            anime({
-                targets: input.parentElement,
-                scale: 1,
-                duration: 200,
-                easing: 'easeOutQuad'
-            });
-        });
-    });
-
+function initButtonEffects() {
     // Add btn hover effects
     document.querySelectorAll('.add-btn').forEach(btn => {
         btn.addEventListener('mouseenter', () => {
@@ -510,27 +513,68 @@ function initFormHandling() {
             anime({
                 targets: btn,
                 scale: [1, 0.9, 1.1, 1],
-                backgroundColor: ['#2D5A27', '#4A7C43'],
-                color: '#fff',
+                backgroundColor: ['transparent', '#2D5A27'],
+                color: ['#4A7C43', '#fff'],
                 duration: 400,
                 easing: 'easeInOutQuad'
             });
         });
     });
-}
 
-// Close modal function
-function closeModal() {
-    const modal = document.getElementById('successModal');
-    anime({
-        targets: '.modal-content',
-        scale: 0.8,
-        opacity: 0,
-        duration: 300,
-        easing: 'easeInBack',
-        complete: () => {
-            modal.classList.remove('active');
-        }
+    // Ripple effect for buttons
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const ripple = document.createElement('span');
+            ripple.style.cssText = `
+                position: absolute;
+                background: rgba(255,255,255,0.3);
+                border-radius: 50%;
+                pointer-events: none;
+                left: ${x}px;
+                top: ${y}px;
+                transform: translate(-50%, -50%);
+            `;
+            this.style.position = 'relative';
+            this.style.overflow = 'hidden';
+            this.appendChild(ripple);
+
+            anime({
+                targets: ripple,
+                width: [0, 200],
+                height: [0, 200],
+                opacity: [1, 0],
+                duration: 600,
+                easing: 'easeOutQuad',
+                complete: () => ripple.remove()
+            });
+        });
+    });
+
+    // Category button effects
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+            if (!btn.classList.contains('active')) {
+                anime({
+                    targets: btn,
+                    scale: 1.05,
+                    duration: 200,
+                    easing: 'easeOutQuad'
+                });
+            }
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            anime({
+                targets: btn,
+                scale: 1,
+                duration: 200,
+                easing: 'easeOutQuad'
+            });
+        });
     });
 }
 
@@ -540,6 +584,8 @@ function closeModal() {
 function initMobileMenu() {
     const toggle = document.getElementById('mobileToggle');
     const menu = document.getElementById('mobileMenu');
+
+    if (!toggle || !menu) return;
 
     toggle.addEventListener('click', () => {
         menu.classList.toggle('active');
@@ -577,41 +623,6 @@ function initMobileMenu() {
 }
 
 /* ========================================
-   Button Ripple Effect
-   ======================================== */
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const ripple = document.createElement('span');
-        ripple.style.cssText = `
-            position: absolute;
-            background: rgba(255,255,255,0.3);
-            border-radius: 50%;
-            pointer-events: none;
-            left: ${x}px;
-            top: ${y}px;
-            transform: translate(-50%, -50%);
-        `;
-        this.style.position = 'relative';
-        this.style.overflow = 'hidden';
-        this.appendChild(ripple);
-
-        anime({
-            targets: ripple,
-            width: [0, 200],
-            height: [0, 200],
-            opacity: [1, 0],
-            duration: 600,
-            easing: 'easeOutQuad',
-            complete: () => ripple.remove()
-        });
-    });
-});
-
-/* ========================================
    Parallax Effect on Scroll
    ======================================== */
 window.addEventListener('scroll', () => {
@@ -621,5 +632,18 @@ window.addEventListener('scroll', () => {
     document.querySelectorAll('.floating-shape').forEach((shape, index) => {
         const speed = 0.1 + (index * 0.05);
         shape.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+});
+
+/* ========================================
+   Image Error Handling
+   ======================================== */
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', function() {
+        // If image fails to load, add a gradient background
+        this.style.display = 'none';
+        if (this.parentElement) {
+            this.parentElement.style.background = 'linear-gradient(135deg, #2D5A27 0%, #4A7C43 100%)';
+        }
     });
 });
