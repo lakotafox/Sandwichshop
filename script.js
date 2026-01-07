@@ -242,15 +242,14 @@ function initScrollAnimations() {
                     });
                 }
 
-                // Menu cards
+                // Menu cards - quick fade in
                 if (element.classList.contains('menu-card')) {
                     anime({
                         targets: element,
                         opacity: [0, 1],
-                        translateY: [40, 0],
-                        duration: 800,
-                        delay: parseInt(element.dataset.delay || 0),
-                        easing: 'easeOutExpo'
+                        translateY: [15, 0],
+                        duration: 300,
+                        easing: 'easeOutQuad'
                     });
                 }
 
@@ -344,10 +343,8 @@ function initScrollAnimations() {
         observer.observe(el);
     });
 
-    // Add staggered delays to menu cards
-    document.querySelectorAll('.menu-card').forEach((card, index) => {
-        card.dataset.delay = index * 100;
-    });
+    // Menu cards show immediately when scrolled into view
+    // No staggered delays - all visible cards appear together
 }
 
 /* ========================================
