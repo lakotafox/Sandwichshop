@@ -12,24 +12,23 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounterAnimation();
     initMenuCategories();
     initButtonEffects();
+    initFormHandling();
 });
 
 /* ========================================
-   Loader Animation
+   Loader Animation - Animated Sandwich
    ======================================== */
 function initLoader() {
     const loader = document.getElementById('loader');
-    const loaderLogo = document.querySelector('.loader-logo');
-    const loaderText = document.querySelector('.loader-text');
 
-    // Animate logo and text
+    // Animate sandwich icon building piece by piece
     const loaderTimeline = anime.timeline({
         easing: 'easeOutExpo',
         complete: () => {
             anime({
                 targets: loader,
                 opacity: 0,
-                duration: 600,
+                duration: 500,
                 easing: 'easeInOutQuad',
                 complete: () => {
                     loader.style.display = 'none';
@@ -41,23 +40,46 @@ function initLoader() {
 
     loaderTimeline
         .add({
-            targets: loaderLogo,
+            targets: '.bread-bottom',
             opacity: [0, 1],
-            scale: [0.5, 1],
-            duration: 800
+            translateY: [30, 0],
+            duration: 400
         })
         .add({
-            targets: loaderText,
+            targets: '.cheese',
             opacity: [0, 1],
             translateY: [20, 0],
-            duration: 500
-        }, '-=400')
+            duration: 300
+        }, '-=100')
+        .add({
+            targets: '.tomato',
+            opacity: [0, 1],
+            translateY: [20, 0],
+            duration: 300
+        }, '-=100')
+        .add({
+            targets: '.lettuce',
+            opacity: [0, 1],
+            translateY: [20, 0],
+            duration: 300
+        }, '-=100')
+        .add({
+            targets: '.bread-top',
+            opacity: [0, 1],
+            translateY: [-30, 0],
+            duration: 400
+        }, '-=100')
+        .add({
+            targets: '.loader-text',
+            opacity: [0, 1],
+            translateY: [10, 0],
+            duration: 400
+        }, '-=200')
         .add({
             targets: '.loader-content',
             scale: [1, 0.95],
-            opacity: [1, 0.8],
-            duration: 300
-        }, '+=800');
+            duration: 200
+        }, '+=500');
 }
 
 /* ========================================
@@ -634,6 +656,81 @@ window.addEventListener('scroll', () => {
         shape.style.transform = `translateY(${scrolled * speed}px)`;
     });
 });
+
+/* ========================================
+   Form Handling
+   ======================================== */
+function initFormHandling() {
+    const form = document.getElementById('orderForm');
+    const modal = document.getElementById('successModal');
+
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Button animation
+        const btn = form.querySelector('button[type="submit"]');
+        anime({
+            targets: btn,
+            scale: [1, 0.95, 1],
+            duration: 300,
+            easing: 'easeInOutQuad'
+        });
+
+        // Show success modal
+        setTimeout(() => {
+            modal.classList.add('active');
+            anime({
+                targets: '.modal-content',
+                scale: [0.8, 1],
+                opacity: [0, 1],
+                duration: 400,
+                easing: 'easeOutBack'
+            });
+
+            // Reset form
+            form.reset();
+        }, 300);
+    });
+
+    // Input focus animations
+    const inputs = form.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            anime({
+                targets: input.parentElement,
+                scale: [1, 1.02],
+                duration: 200,
+                easing: 'easeOutQuad'
+            });
+        });
+
+        input.addEventListener('blur', () => {
+            anime({
+                targets: input.parentElement,
+                scale: 1,
+                duration: 200,
+                easing: 'easeOutQuad'
+            });
+        });
+    });
+}
+
+// Close modal function
+function closeModal() {
+    const modal = document.getElementById('successModal');
+    anime({
+        targets: '.modal-content',
+        scale: 0.8,
+        opacity: 0,
+        duration: 300,
+        easing: 'easeInBack',
+        complete: () => {
+            modal.classList.remove('active');
+        }
+    });
+}
 
 /* ========================================
    Image Error Handling
