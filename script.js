@@ -645,26 +645,6 @@ function initMobileMenu() {
 }
 
 /* ========================================
-   Parallax Effect on Scroll (Optimized)
-   ======================================== */
-let ticking = false;
-const shapes = document.querySelectorAll('.floating-shape');
-
-window.addEventListener('scroll', () => {
-    if (!ticking) {
-        requestAnimationFrame(() => {
-            const scrolled = window.pageYOffset;
-            shapes.forEach((shape, index) => {
-                const speed = 0.05 + (index * 0.02);
-                shape.style.transform = `translate3d(0, ${scrolled * speed}px, 0)`;
-            });
-            ticking = false;
-        });
-        ticking = true;
-    }
-}, { passive: true });
-
-/* ========================================
    Form Handling
    ======================================== */
 function initFormHandling() {
