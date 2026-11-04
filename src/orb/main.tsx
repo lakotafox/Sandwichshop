@@ -27,4 +27,8 @@ const webgl = (() => {
   }
 })();
 
-if (el && webgl) createRoot(el).render(<NebulaSphere config={RED} className="orb__canvas" />);
+if (el && webgl) {
+  const root = createRoot(el);
+  root.render(<NebulaSphere config={RED} className="orb__canvas" />);
+  window.addEventListener("intro:done", () => root.unmount(), { once: true });
+}

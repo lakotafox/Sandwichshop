@@ -15,38 +15,30 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="is-locked">
 
-  <!-- Content warning: shown until the visitor chooses to continue -->
-  <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title" hidden>
-    <div class="gate__box">
-      <p class="eyebrow">Content warning</p>
-      <h2 id="gate-title">This record contains graphic footage</h2>
-      <p>The clips document killing, injury and destruction, and many show children. Images are blurred until you choose to see them.</p>
-      <div class="gate__actions">
-        <button class="btn btn--primary" id="gate-continue" type="button">I understand, continue</button>
-        <a class="btn btn--ghost" href="https://www.google.com/">Leave this site</a>
+  <!-- Intro: the hands and the sphere, then the title, then the warning and Enter.
+       Nothing else shows until the visitor enters. -->
+  <div class="intro" id="intro" role="dialog" aria-modal="true" aria-labelledby="intro-title" aria-describedby="intro-warn">
+    <div class="orb" id="orb" aria-hidden="true"></div>
+    <div class="intro__veil" aria-hidden="true"></div>
+    <div class="intro__copy">
+      <h1 class="intro__title" id="intro-title">
+        <span class="intro__line">The Government</span>
+        <span class="intro__line intro__line--accent">Is Corrupt</span>
+      </h1>
+      <div class="intro__prompt">
+        <p class="intro__warn" id="intro-warn"><strong>Content warning.</strong> This site holds footage of killing and injury from Gaza and the West Bank, much of it showing children.</p>
+        <div class="intro__actions">
+          <button class="btn btn--primary btn--lg" id="intro-enter" type="button">Enter</button>
+          <a class="intro__leave" href="https://www.google.com/">Leave</a>
+        </div>
       </div>
     </div>
   </div>
 
-  <header class="topbar">
-    <div class="wrap topbar__inner">
-      <a class="brand" href="./" aria-label="The Government Is Corrupt, home">
-        <span class="brand__mark" aria-hidden="true">T</span>
-        <span class="brand__name">The Government <em>Is Corrupt</em></span>
-      </a>
-      <nav class="topnav" aria-label="Main">
-        <a href="#search">Search</a>
-        <a href="#about">About the data</a>
-        <a href="#resources">Resources</a>
-      </nav>
-    </div>
-  </header>
-
   <main>
     <section class="hero">
-      <div class="orb" id="orb" aria-hidden="true"></div>
       <div class="wrap hero__content">
         <p class="eyebrow">Gaza &amp; the West Bank · October 2023 to today</p>
         <h1>They said it didn't happen.<br><span>Here is the footage.</span></h1>

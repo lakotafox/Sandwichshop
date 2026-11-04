@@ -439,17 +439,25 @@
   }
 
   // ---------- content warning + blur ----------
-  function initGate() {
-    const gate = $("#gate");
-    if (store.get(STORE.gate) === "1") return;
-    gate.hidden = false;
-    document.body.classList.add("is-locked");
-    $("#gate-continue").focus();
-    $("#gate-continue").addEventListener("click", () => {
+  function initIntro() {
+    const intro = $("#intro");
+    const enter = $("#intro-enter");
+    document.body.classList.add("intro-play");
+    const behind = document.querySelectorAll("main, footer");
+    behind.forEach((n) => n.setAttribute("inert", ""));
+    // The Enter button only becomes reachable once it has faded in.
+    const ready = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 7200;
+    setTimeout(() => { intro.classList.add("is-ready"); enter.focus({ preventScroll: true }); }, ready);
+    enter.addEventListener("click", () => {
       store.set(STORE.gate, "1");
-      gate.hidden = true;
-      document.body.classList.remove("is-locked");
-      $("#q").focus({ preventScroll: true });
+      intro.classList.add("is-leaving");
+      setTimeout(() => {
+        window.dispatchEvent(new Event("intro:done")); // stops the 3D scene
+        intro.remove();
+        behind.forEach((n) => n.removeAttribute("inert"));
+        document.body.classList.remove("is-locked", "intro-play");
+        $("#q").focus({ preventScroll: true });
+      }, 1400);
     });
   }
 
@@ -469,7 +477,7 @@
     readUrl();
     syncForm();
     applyView();
-    initGate();
+    initIntro();
     initBlur();
     loadMeta();
 

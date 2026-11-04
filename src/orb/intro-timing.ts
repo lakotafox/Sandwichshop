@@ -15,4 +15,4 @@ export const HERO_REVEAL_DELAY = PRELOADER_LOAD_MS + 400; // ~2400
 
 // --- WebGL hands — fly in a touch earlier, ~when the preloader is 90% gone ---
 export const HANDS_REVEAL_DELAY = PRELOADER_LOAD_MS + 500; // ~2500
-export const HANDS_FLY_MS = 1700; // longer, gentler fly-in (see easeOutQuint)
+export const HANDS_FLY_MS = 4200; // longer, gentler fly-in (see easeOutQuint)
