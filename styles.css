@@ -310,3 +310,26 @@ body.unblur .thumb img { filter: none; transform: none; }
   .stat dd { font-size: 1.3rem; }
   .filters__grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* Red sphere in hands behind the opening section (always dark, both themes) */
+.hero {
+  position: relative; overflow: hidden; isolation: isolate;
+  min-height: min(100svh, 920px); display: flex; align-items: flex-end;
+  background: #000; color: #f3efe9; border-bottom: 1px solid #2a0b0f;
+}
+.orb { position: absolute; inset: 0; z-index: -1; }
+.orb__canvas { position: absolute; inset: 0; }
+.orb canvas { display: block; width: 100% !important; height: 100% !important; }
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.55) 38%, rgba(0,0,0,0) 70%);
+}
+.hero__content { position: relative; width: 100%; padding-top: 40vh; }
+.hero .eyebrow { color: #c9b9b6; }
+.hero h1 { color: #fff; }
+.hero h1 span { color: #ff3b4e; }
+.hero__lede { color: #d8cfcb; }
+.hero .stats { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.14); }
+.hero .stat { background: rgba(10,8,9,.72); backdrop-filter: blur(6px); }
+.hero .stat dt { color: #a99c99; }
+.hero .stat dd { color: #fff; }

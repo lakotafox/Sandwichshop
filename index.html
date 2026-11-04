@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"
         integrity="sha512-Zcn6bjR/8RZbLEpLIeOwNtzREBAJnUKESxces60Mpoj+2okopSAcSUIUOseddDm0cxnGQzxIR7vJgsLZbdLE3w=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
@@ -46,7 +46,8 @@
 
   <main>
     <section class="hero">
-      <div class="wrap">
+      <div class="orb" id="orb" aria-hidden="true"></div>
+      <div class="wrap hero__content">
         <p class="eyebrow">Gaza &amp; the West Bank · October 2023 to today</p>
         <h1>They said it didn't happen.<br><span>Here is the footage.</span></h1>
         <p class="hero__lede">A searchable record of clips filmed and posted by the people living through it, each with its date, its source and, where known, its place on the map.</p>
@@ -217,6 +218,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"
           integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg=="
           crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-  <script src="app.js" defer></script>
+  <script type="module" src="/app.js"></script>
+  <script type="module" src="/src/orb/main.tsx"></script>
 </body>
 </html>
