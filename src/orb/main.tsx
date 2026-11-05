@@ -1,7 +1,5 @@
 // Self-hosted type for the whole page (no font requests to third parties).
-import "@fontsource-variable/fraunces/opsz.css";
-import "@fontsource-variable/fraunces/opsz-italic.css";
-import "@fontsource-variable/inter";
+import "@fontsource-variable/mulish";
 
 // Red sphere cradled in two hands: the gring-x hero scene from PUDDL3 P4RTS,
 // recoloured from blue to red and mounted behind the page's opening section.
