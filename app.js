@@ -90,7 +90,6 @@
     $("#f-archive").value = state.archive;
     $("#f-geo").value = state.has_geo;
     $("#f-sort").value = state.sort || "-date";
-    if (state.type || state.from || state.to || state.archive || state.has_geo || state.sort) $("#filters").open = true;
     document.querySelectorAll(".segmented button").forEach((b) => {
       const on = b.dataset.view === state.view;
       b.classList.toggle("is-active", on);
@@ -233,11 +232,11 @@
 
   function card(c) {
     const thumb = safeUrl(c.thumbnail_url);
-    const badge = c.type === "video" ? `▶ ${c.duration || "Video"}` : "Photo";
+    const badge = c.type === "video" ? (c.duration || "Video") : "Photo";
     const meta = el("div", { class: "clip__meta" },
       el("span", { text: fmtDate(c.date) }),
       c.confidence ? el("span", { class: `pill pill--${c.confidence}`, text: c.confidence, title: "Archive review status" }) : null,
-      c.geo ? el("span", { class: "pill pill--geo", text: "📍 " + precisionLabel(c.geo.precision_level) }) : null,
+      c.geo ? el("span", { class: "pill pill--geo", text: precisionLabel(c.geo.precision_level) }) : null,
     );
     return el("button", {
       class: "clip", type: "button",

@@ -8,7 +8,7 @@
   <meta property="og:title" content="The Government Is Corrupt — Gaza Footage Record">
   <meta property="og:description" content="Search documented footage from Gaza and the West Bank since October 2023, by date, place and source.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#0e0f11">
+  <meta name="theme-color" content="#000000">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23c8102e'/%3E%3Cpath d='M9 9h14v3h-5.5v11h-3V12H9z' fill='%23fff'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"
         integrity="sha512-Zcn6bjR/8RZbLEpLIeOwNtzREBAJnUKESxces60Mpoj+2okopSAcSUIUOseddDm0cxnGQzxIR7vJgsLZbdLE3w=="
@@ -38,76 +38,84 @@
   </div>
 
   <main>
-    <section class="hero">
-      <div class="wrap hero__content">
-        <p class="eyebrow">Gaza &amp; the West Bank · October 2023 to today</p>
-        <h1>They said it didn't happen.<br><span>Here is the footage.</span></h1>
-        <p class="hero__lede">A searchable record of clips filmed and posted by the people living through it, each with its date, its source and, where known, its place on the map.</p>
-        <dl class="stats" aria-live="polite">
-          <div class="stat"><dt>Clips on record</dt><dd id="stat-clips">—</dd></div>
-          <div class="stat"><dt>With a map location</dt><dd id="stat-geo">—</dd></div>
-          <div class="stat"><dt>Source collections</dt><dd id="stat-sources">—</dd></div>
-          <div class="stat"><dt>Data last updated</dt><dd id="stat-built">—</dd></div>
+    <header class="masthead">
+      <div class="wrap masthead__inner">
+        <a class="wordmark" href="./">The Government <em>Is Corrupt</em></a>
+        <p class="folio">The Gaza record · updated <span id="stat-built">—</span></p>
+      </div>
+    </header>
+
+    <section class="opening" aria-labelledby="opening-title">
+      <div class="wrap grid">
+        <div class="opening__lead">
+          <p class="kicker">Gaza &amp; the West Bank — since October 2023</p>
+          <h1 id="opening-title">They said it didn’t happen. <em>Here is the footage.</em></h1>
+          <p class="standfirst">A searchable record of clips filmed and posted by the people living through it. Each one carries its date, its source and, where known, its place on the map.</p>
+        </div>
+        <dl class="ledger" aria-live="polite">
+          <div><dt>Clips on record</dt><dd id="stat-clips">—</dd></div>
+          <div><dt>With a map location</dt><dd id="stat-geo">—</dd></div>
+          <div><dt>Source collections</dt><dd id="stat-sources">—</dd></div>
         </dl>
       </div>
     </section>
 
-    <section class="search" id="search" aria-labelledby="search-title">
+    <section class="record" id="search" aria-labelledby="search-title">
       <div class="wrap">
-        <h2 id="search-title" class="visually-hidden">Search the record</h2>
+        <div class="section-head">
+          <p class="kicker">I. The record</p>
+          <h2 id="search-title">Search the footage</h2>
+        </div>
+
         <form class="searchbar" id="search-form" role="search">
           <label class="visually-hidden" for="q">Search captions in English or Arabic</label>
           <input id="q" name="q" type="search" maxlength="200" dir="auto" autocomplete="off"
-                 placeholder="Search captions in English or Arabic, e.g. hospital, Rafah, مستشفى">
-          <button class="btn btn--primary" type="submit">Search</button>
+                 placeholder="hospital, Rafah, مستشفى …">
+          <button class="searchbar__go" type="submit">Search <span aria-hidden="true">→</span></button>
         </form>
+        <p class="searchbar__hint">Searches every caption, in English or Arabic.</p>
 
-        <details class="filters" id="filters">
-          <summary>Filters</summary>
-          <div class="filters__grid">
-            <label>Type
-              <select id="f-type" name="type">
-                <option value="">Videos and photos</option>
-                <option value="video">Videos only</option>
-                <option value="photo">Photos only</option>
-              </select>
-            </label>
-            <label>From
-              <input id="f-from" name="from" type="date" min="2023-10-01">
-            </label>
-            <label>To
-              <input id="f-to" name="to" type="date" min="2023-10-01">
-            </label>
-            <label class="filters__wide">Source collection
-              <select id="f-archive" name="archive">
-                <option value="">All collections</option>
-              </select>
-            </label>
-            <label>Location
-              <select id="f-geo" name="has_geo">
-                <option value="">Any</option>
-                <option value="1">Has a map location</option>
-                <option value="0">No map location</option>
-              </select>
-            </label>
-            <label>Order
-              <select id="f-sort" name="sort">
-                <option value="-date">Newest first</option>
-                <option value="date">Oldest first</option>
-              </select>
-            </label>
-          </div>
-          <div class="filters__actions">
-            <button class="btn btn--ghost btn--sm" type="button" id="f-reset">Clear filters</button>
-          </div>
-        </details>
+        <div class="refine" id="filters">
+          <label>Type
+            <select id="f-type" name="type">
+              <option value="">Videos &amp; photos</option>
+              <option value="video">Videos</option>
+              <option value="photo">Photos</option>
+            </select>
+          </label>
+          <label>From
+            <input id="f-from" name="from" type="date" min="2023-10-01">
+          </label>
+          <label>To
+            <input id="f-to" name="to" type="date" min="2023-10-01">
+          </label>
+          <label class="refine__wide">Source
+            <select id="f-archive" name="archive">
+              <option value="">All collections</option>
+            </select>
+          </label>
+          <label>Location
+            <select id="f-geo" name="has_geo">
+              <option value="">Any</option>
+              <option value="1">On the map</option>
+              <option value="0">Not on the map</option>
+            </select>
+          </label>
+          <label>Order
+            <select id="f-sort" name="sort">
+              <option value="-date">Newest first</option>
+              <option value="date">Oldest first</option>
+            </select>
+          </label>
+          <button class="textbtn" type="button" id="f-reset">Clear</button>
+        </div>
 
         <div class="toolbar">
           <p class="toolbar__count" id="result-count" aria-live="polite">Loading the record…</p>
           <div class="toolbar__controls">
             <label class="switch">
               <input type="checkbox" id="unblur">
-              <span>Show images unblurred</span>
+              <span>Unblur images</span>
             </label>
             <div class="segmented" role="group" aria-label="View">
               <button type="button" class="is-active" data-view="grid" aria-pressed="true">Grid</button>
@@ -116,75 +124,96 @@
           </div>
         </div>
 
-        <p class="notice" id="map-note" hidden>The map shows located clips from the current page of results (up to 100 at a time). Points marked “area” stand for a town, neighbourhood or named building, not the exact filming spot.</p>
+        <p class="notice" id="map-note" hidden>The map shows located clips from the current page of results, up to 100 at a time. Pins marked “area” stand for a town, neighbourhood or named building, not the exact filming spot.</p>
 
         <div id="map" class="map" hidden></div>
-        <div class="grid" id="results" aria-busy="true"></div>
+        <div class="grid-plates" id="results" aria-busy="true"></div>
         <p class="empty" id="empty" hidden>No clips match this search. Try fewer words or a wider date range.</p>
         <p class="error" id="error" role="alert" hidden></p>
 
         <nav class="pager" id="pager" aria-label="Pages" hidden>
-          <button class="btn btn--ghost" type="button" id="prev">← Newer</button>
+          <button class="textbtn" type="button" id="prev">← Newer</button>
           <span id="page-info"></span>
-          <button class="btn btn--ghost" type="button" id="next">Older →</button>
+          <button class="textbtn" type="button" id="next">Older →</button>
         </nav>
       </div>
     </section>
 
-    <section class="about" id="about" aria-labelledby="about-title">
-      <div class="wrap about__grid">
-        <div>
-          <h2 id="about-title">About the data</h2>
-          <p>Every clip on this site comes live from the open API of <a href="https://archivegenocide.com/" target="_blank" rel="noopener">Archive Genocide</a>, which preserves footage from Gaza and the West Bank posted by journalists, channels and residents since October 2023. Nothing is stored or altered here.</p>
-          <p>Captions come from the people who posted the footage, not from this site. A record shows what was posted and when. It is a primary source to examine, not a finding. The date is when the source posted the clip, which is not always when the event happened.</p>
-          <p>The footage belongs to the people who filmed it. Please credit them and Archive Genocide when you share it, and respect the people shown.</p>
-        </div>
-        <div>
-          <h3>Reading a record</h3>
-          <dl class="legend">
-            <dt><span class="pill pill--high">high</span> <span class="pill pill--medium">medium</span> <span class="pill pill--low">low</span></dt>
-            <dd>How closely the archive's review matches the clip to what it documents. This reflects review status, not a judgement about whether the event happened.</dd>
-            <dt>Town / area</dt>
-            <dd>The caption names only a town or city. The pin is the centre of that area.</dd>
-            <dt>Neighbourhood</dt>
-            <dd>The caption names a neighbourhood or camp. The pin marks the area.</dd>
-            <dt>Building</dt>
-            <dd>The caption names a building such as a hospital or school. The footage may have been filmed nearby.</dd>
-            <dt>Exact site</dt>
-            <dd>Geolocated from the footage itself or from cited reporting.</dd>
-          </dl>
-        </div>
+    <section class="pull" aria-label="From the archive">
+      <div class="wrap">
+        <blockquote>
+          <p>“A record shows what was posted and when. It is a primary source for you to examine, not a finding.”</p>
+          <footer>— Archive Genocide, on its own record</footer>
+        </blockquote>
       </div>
     </section>
 
-    <section class="resources" id="resources" aria-labelledby="resources-title">
-      <div class="wrap">
-        <h2 id="resources-title">Resources</h2>
-        <div class="cards">
-          <a class="card" href="https://archivegenocide.com/" target="_blank" rel="noopener">
-            <h3>Archive Genocide</h3>
-            <p>The full archive, with the memorial of named victims, a daily war log, maps and bulk downloads.</p>
-            <span class="card__link">archivegenocide.com ↗</span>
-          </a>
-          <a class="card" href="https://whofundedgenocide.com/" target="_blank" rel="noopener">
-            <h3>Who Funded Genocide</h3>
-            <p>A searchable database of pro-Israel lobby money in U.S. politics, built from public FEC filings.</p>
-            <span class="card__link">whofundedgenocide.com ↗</span>
-          </a>
-          <a class="card" href="https://archivegenocide.com/api-docs/" target="_blank" rel="noopener">
-            <h3>Open API</h3>
-            <p>The free, keyless API behind this site, for researchers, journalists, lawyers and developers.</p>
-            <span class="card__link">API guide and terms ↗</span>
-          </a>
+    <section class="notes" id="about" aria-labelledby="about-title">
+      <div class="wrap grid">
+        <div class="notes__head">
+          <p class="kicker">II. Notes</p>
+          <h2 id="about-title">About the data</h2>
         </div>
+        <ol class="index">
+          <li>
+            <span class="index__no">01</span>
+            <div>
+              <h3>Where it comes from</h3>
+              <p>Every clip loads live from the open API of <a href="https://archivegenocide.com/" target="_blank" rel="noopener">Archive Genocide</a>, which preserves footage posted by journalists, channels and residents. Nothing is stored or altered here.</p>
+            </div>
+          </li>
+          <li>
+            <span class="index__no">02</span>
+            <div>
+              <h3>Captions and dates</h3>
+              <p>Captions are written by the people who posted the footage, not by this site. The date is when the source posted the clip, which is not always when the event happened.</p>
+            </div>
+          </li>
+          <li>
+            <span class="index__no">03</span>
+            <div>
+              <h3>The review mark</h3>
+              <p><span class="mark mark--high">High</span>, <span class="mark mark--medium">medium</span> or <span class="mark mark--low">low</span> shows how closely the archive’s review matches the clip to what it documents. It reflects review status, not a judgement about whether the event happened.</p>
+            </div>
+          </li>
+          <li>
+            <span class="index__no">04</span>
+            <div>
+              <h3>Reading a location</h3>
+              <p><em>Town</em> and <em>neighbourhood</em> pins mark the centre of an area named in the caption. <em>Building</em> means a named hospital or school; the footage may be from nearby. <em>Exact site</em> is geolocated from the footage or from cited reporting.</p>
+            </div>
+          </li>
+          <li>
+            <span class="index__no">05</span>
+            <div>
+              <h3>Who the footage belongs to</h3>
+              <p>The people who filmed it. Credit them and Archive Genocide when you share it, and respect the people shown.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="notes notes--further" id="resources" aria-labelledby="resources-title">
+      <div class="wrap grid">
+        <div class="notes__head">
+          <p class="kicker">III. Further</p>
+          <h2 id="resources-title">Elsewhere</h2>
+        </div>
+        <ul class="links">
+          <li><a href="https://archivegenocide.com/" target="_blank" rel="noopener"><span>Archive Genocide</span><small>The full archive: the memorial of named victims, a daily war log, maps and bulk downloads.</small><i aria-hidden="true">↗</i></a></li>
+          <li><a href="https://whofundedgenocide.com/" target="_blank" rel="noopener"><span>Who Funded Genocide</span><small>Pro-Israel lobby money in U.S. politics, from public FEC filings.</small><i aria-hidden="true">↗</i></a></li>
+          <li><a href="https://archivegenocide.com/api-docs/" target="_blank" rel="noopener"><span>The open API</span><small>Free and keyless, for researchers, journalists, lawyers and developers.</small><i aria-hidden="true">↗</i></a></li>
+        </ul>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="wrap">
-      <p>Records courtesy of <a href="https://archivegenocide.com/" target="_blank" rel="noopener">Archive Genocide</a>, used under its <a href="https://archivegenocide.com/api-docs/#terms" target="_blank" rel="noopener">API terms</a>. Footage belongs to the people who filmed it.</p>
-      <p class="footer__muted">This site keeps no logs and sets no tracking cookies.</p>
+  <footer class="colophon">
+    <div class="wrap grid">
+      <p class="colophon__mark">The Government <em>Is Corrupt</em></p>
+      <p>Records courtesy of <a href="https://archivegenocide.com/" target="_blank" rel="noopener">Archive Genocide</a>, used under its <a href="https://archivegenocide.com/api-docs/" target="_blank" rel="noopener">API terms</a>. Footage belongs to the people who filmed it.</p>
+      <p>This site keeps no logs and sets no tracking cookies.</p>
     </div>
   </footer>
 
