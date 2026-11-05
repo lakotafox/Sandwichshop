@@ -281,3 +281,17 @@ body:not(.unblur) .clip:hover .thumb img { transform: scale(1.14); }
   .refine__wide { grid-column: 1 / -1; }
   .refine input, .refine select { width: 100%; }
 }
+
+/* Who paid for it */
+.funding { padding: 88px 0; border-bottom: 1px solid var(--rule); background: radial-gradient(800px 360px at 0% 30%, rgba(224, 33, 58, .12), transparent 70%); }
+.funding h2 { margin: 0; font-family: var(--display); font-weight: 200; font-size: clamp(1.4rem, 2.4vw, 2rem); line-height: 1.25; letter-spacing: .02em; text-transform: uppercase; }
+.funding__figure { display: block; margin-bottom: 12px; color: var(--red); font-size: clamp(3rem, 8vw, 6.4rem); line-height: 1; letter-spacing: 0; font-variant-numeric: lining-nums; }
+.funding__note { margin: 16px 0 0; font-size: .86rem; color: var(--paper-3); }
+.funding__facts .index__no { font-size: .9rem; letter-spacing: .04em; }
+.funding__facts li { grid-template-columns: 72px 1fr; }
+.funding__sources { margin: 0; font-size: .76rem; color: var(--paper-3); }
+@media (min-width: 900px) {
+  .funding__head { grid-column: 1 / span 5; }
+  .funding__facts { grid-column: 7 / span 6; }
+  .funding__sources { grid-column: 1 / -1; }
+}
